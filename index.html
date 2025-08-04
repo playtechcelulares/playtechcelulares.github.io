@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Playtech Celulares</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --verde-principal: #1b6b5e;
+      --verde-escuro: #145049;
+      --branco: #fff;
+      --cinza-escuro: #333;
+      --verde-nav: rgba(27, 107, 94, 0.95);
+    }
+
+    * {
+      scroll-behavior: smooth;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--cinza-escuro);
+      background: linear-gradient(-45deg, var(--verde-principal), var(--verde-escuro), #1e847f, var(--verde-principal));
+      background-size: 400% 400%;
+      animation: gradientBG 12s ease infinite;
+    }
+
+    @keyframes gradientBG {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--verde-nav);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 5%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .logo-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--branco);
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      padding: 5px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .logo-circle img {
+      height: 50px;
+      width: 50px;
+      object-fit: contain;
+      border-radius: 12px;
+      background: white;
+    }
+
+    .logo-text {
+      color: var(--branco);
+      font-weight: bold;
+      font-size: 1.5rem;
+      text-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    }
+
+    .logo-text span {
+      color: #ffd700;
+      font-weight: normal;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    nav a {
+      color: var(--branco);
+      text-decoration: none;
+      font-weight: 600;
+      padding: 8px 16px;
+      transition: all 0.3s;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    nav a:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateY(-2px);
+    }
+
+    header {
+      padding-top: 120px;
+      padding-bottom: 40px;
+      text-align: center;
+      color: var(--branco);
+    }
+
+    .header-content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-top: 10px;
+      line-height: 1.6;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    }
+
+    .destaque {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-top: 15px;
+      font-weight: 500;
+    }
+
+    /* Seção de serviços */
+    .servicos {
+      padding: 40px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      color: var(--branco);
+      font-size: 2.2rem;
+      margin-bottom: 30px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    .produtos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .produto {
+      background: var(--branco);
+      border-radius: 12px;
+      padding: 25px 20px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+    }
+
+    .produto:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .produto img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .produto h3 {
+      color: var(--verde-escuro);
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    .produto p {
+      color: var(--cinza-escuro);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+
+    .preco {
+      font-weight: bold;
+      color: var(--verde-escuro);
+      font-size: 1.2rem;
+      margin: 15px 0;
+    }
+
+    .btn-detalhes {
+      display: inline-block;
+      background: var(--verde-principal);
+      color: white;
+      padding: 10px 20px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      border: 2px solid var(--verde-principal);
+    }
+
+    /* Botão WhatsApp */
+    .whatsapp-container {
+      text-align: center;
+      padding: 40px 20px;
+      background: rgba(255, 255, 255, 0.1);
+      margin: 40px 0;
+    }
+
+    .whatsapp {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: #25D366;
+      color: white;
+      padding: 16px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+
+    /* Rodapé */
+    footer {
+      background: var(--verde-nav);
+      color: var(--branco);
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 1rem;
+      margin-top: 50px;
+    }
+
+    .footer-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      text-align: left;
+    }
+
+    .footer-column a {
+      color: rgba(255, 255, 255, 0.9);
+      text-decoration: none;
+    }
+
+    .footer-column a:hover {
+      text-decoration: underline;
+    }
+
+    .social-icons {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      transition: all 0.3s;
+      color: white;
+    }
+
+    .social-icons a:hover {
+      background: var(--branco);
+      color: var(--verde-escuro);
+      transform: translateY(-3px);
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="logo-container">
+    <div class="logo-circle">
+      <img src="imagens/logo.png" alt="Playtech Celulares">
+    </div>
+    <div class="logo-text">Playtech<span> Celulares</span></div>
+  </div>
+  <div class="nav-links">
+    <a href="#home"><i class="fas fa-home"></i> Início</a>
+    <a href="#servicos"><i class="fas fa-tools"></i> Serviços</a>
+    <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+  </div>
+</nav>
+
+<header id="home">
+  <div class="header-content">
+    <h1>Assistência Especializada em Smartphones</h1>
+    <p>Apple, Samsung, Xiaomi, Motorola</p>
+    <p class="destaque"><i class="fas fa-star"></i> Mais de 10 anos de experiência no mercado</p>
+  </div>
+</header>
+
+<section id="servicos" class="servicos">
+  <h2 class="section-title">Nossos Serviços</h2>
+  <div class="produtos">
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1605787020600-b9ebd5df1d07" alt="Troca de Tela">
+      <h3>Troca de Tela</h3>
+      <p>Serviço realizado com telas originais ou de alta qualidade.</p>
+      <div class="preco">A partir de R$ 149,90</div>
+    </div>
+    <div class="produto">
+      <img src="https://c1.wallpaperflare.com/preview/647/330/371/technology-digital-online-hand.jpg" alt="Troca de Bateria">
+      <h3>Troca de Bateria</h3>
+      <p>Recupere a autonomia do seu aparelho com baterias novas.</p>
+      <div class="preco">A partir de R$ 99,90</div>
+    </div>
+    <div class="produto">
+      <img src="https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?q=80&w=1326&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Acessórios em Geral">
+      <h3>Acessórios</h3>
+      <p>Carregadores, Capinhas, Cabos, Fones de Ouvido, Películas</p>
+      <div class="preco">A partir de R$ 19,90</div>
+    </div>
+  </div>
+</section>
+
+<div class="whatsapp-container">
+  <a href="https://wa.me/5562995086831" class="whatsapp" target="_blank">
+    <i class="fab fa-whatsapp"></i> Fale Conosco no WhatsApp
+  </a>
+</div>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-column">
+      <h3>Playtech Celulares</h3>
+      <p>Assistência técnica especializada em smartphones.</p>
+      <div class="social-icons">
+        <a href="http://instagram.com/playtech_celulares" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://wa.me/5562995086831" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Contato</h3>
+      <p><i class="fas fa-map-marker-alt"></i> <a href="https://share.google/HPvReN1sN9FO6LOBS" target="_blank">Localização</a></p>
+      <p><i class="fas fa-phone"></i> (62) 99508-6831</p>
+      <p><i class="fas fa-envelope"></i> <a href="mailto:contatoplaytechcelulares@gmail.com">contatoplaytechcelulares@gmail.com</a></p>
+    </div>
+  </div>
+  <p>&copy; 2025 Playtech Celulares - Todos os direitos reservados</p>
+</footer>
+
+</body>
+</html>
