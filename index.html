@@ -146,7 +146,6 @@
       font-weight: 500;
     }
 
-    /* Seção de serviços */
     .servicos {
       padding: 40px 20px;
     }
@@ -208,18 +207,35 @@
       margin: 15px 0;
     }
 
+    /* Botão WhatsApp estilizado */
     .btn-detalhes {
-      display: inline-block;
-      background: var(--verde-principal);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: #25D366;
       color: white;
-      padding: 10px 20px;
-      border-radius: 30px;
+      padding: 12px 20px;
+      border-radius: 50px;
       text-decoration: none;
-      font-weight: 600;
-      border: 2px solid var(--verde-principal);
+      font-weight: bold;
+      border: none;
+      font-size: 1rem;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      transition: all 0.3s ease;
+      width: 100%;
     }
 
-    /* Botão WhatsApp */
+    .btn-detalhes i {
+      font-size: 1.2rem;
+    }
+
+    .btn-detalhes:hover {
+      background: #1ebe5c;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.25);
+      transform: translateY(-2px);
+    }
+
     .whatsapp-container {
       text-align: center;
       padding: 40px 20px;
@@ -241,7 +257,6 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
-    /* Rodapé */
     footer {
       background: var(--verde-nav);
       color: var(--branco);
@@ -304,7 +319,9 @@
     <div class="logo-text">Playtech<span> Celulares</span></div>
   </div>
   <div class="nav-links">
-    <a href="#contato"><i class="fas fa-envelope"></i> Contato</a>
+    <a href="https://wa.me/5562995086831" target="_blank">
+      <i class="fab fa-whatsapp"></i> Contato
+    </a>
   </div>
 </nav>
 
@@ -324,18 +341,21 @@
       <h3>Troca de Tela</h3>
       <p>Serviço realizado com telas originais ou de alta qualidade.</p>
       <div class="preco">A partir de R$ 149,90</div>
+      <a href="https://wa.me/5562995086831?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20troca%20de%20tela." class="btn-detalhes" target="_blank"><i class="fab fa-whatsapp"></i> Pedir Orçamento</a>
     </div>
     <div class="produto">
       <img src="https://c1.wallpaperflare.com/preview/647/330/371/technology-digital-online-hand.jpg" alt="Troca de Bateria">
       <h3>Troca de Bateria</h3>
       <p>Recupere a autonomia do seu aparelho com baterias novas.</p>
       <div class="preco">A partir de R$ 99,90</div>
+      <a href="https://wa.me/5562995086831?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20troca%20de%20bateria." class="btn-detalhes" target="_blank"><i class="fab fa-whatsapp"></i> Pedir Orçamento</a>
     </div>
     <div class="produto">
       <img src="https://images.unsplash.com/photo-1609081219090-a6d81d3085bf?q=80&w=1326&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Acessórios em Geral">
       <h3>Acessórios</h3>
       <p>Carregadores, Capinhas, Cabos, Fones de Ouvido, Películas</p>
       <div class="preco">A partir de R$ 19,90</div>
+      <a href="https://wa.me/5562995086831?text=Olá!%20Gostaria%20de%20um%20orçamento%20para%20acessórios." class="btn-detalhes" target="_blank"><i class="fab fa-whatsapp"></i> Pedir Orçamento</a>
     </div>
   </div>
 </section>
